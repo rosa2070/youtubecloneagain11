@@ -7,6 +7,7 @@ class Video(models.Model):
     description = models.TextField()
     file = models.FileField()
     photo = models.ImageField()
+    view_count = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
