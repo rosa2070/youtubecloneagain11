@@ -1,0 +1,4 @@
+django=3.1.5
+django-bootstrap4
+pillow
+Django~=3.1.5
