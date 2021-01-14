@@ -10,7 +10,7 @@ class VideoForm(forms.ModelForm):
             extension = os.path.splitext(file.name)[-1].lower()
             if extension not in ('.mp4', '.avi'):
                 raise forms.ValidationError('비디오 파일을 업로드해주세요.')
-            return file
+        return file
 
     class Meta:
         model = Video
@@ -21,7 +21,13 @@ class VideoForm(forms.ModelForm):
             'photo',
         ]
 
-class Commentform(forms.ModelForm):
+
+class CommentForm(forms.ModelForm):
     class Meta:
-        model = Video
-        fields = '__all__'
+        model = Comment
+        fields = [
+            'content',
+        ]
+        widgets = {
+            'content' : forms.Textarea(attrs={'rows': 3}),
+        }
